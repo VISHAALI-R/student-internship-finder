@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Internship Finder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <h1 class="title">Student Internship Finder</h1>
+            <p class="subtitle">Find internships by domain easily</p>
+        </div>
+    </header>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="Web Development">Web Development</button>
+                <button class="filter-btn" data-filter="Artificial Intelligence">Artificial Intelligence</button>
+                <button class="filter-btn" data-filter="Design">Design</button>
+                <button class="filter-btn" data-filter="Data Science">Data Science</button>
+                <button class="filter-btn" data-filter="Mobile Development">Mobile Development</button>
+                <button class="filter-btn" data-filter="Other">Other</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Internship Listing Section -->
+    <section class="internship-section">
+        <div class="container">
+            <div id="internship-container" class="internship-grid">
+                <!-- Internship cards will be dynamically generated here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Modal -->
+    <div id="application-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Apply for Internship</h2>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="modal-internship-info" class="internship-info"></p>
+                <form id="application-form">
+                    <!-- Simplified form to only ask for student name and domain -->
+                    <div class="form-group">
+                        <label for="student-name">Student Name <span class="required">*</span></label>
+                        <input type="text" id="student-name" name="studentName" required placeholder="Enter your full name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email (Gmail) <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your Gmail address">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="college-name">College Name <span class="required">*</span></label>
+                        <input type="text" id="college-name" name="collegeName" required placeholder="Enter your college name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="resume">Resume <span class="required">*</span></label>
+                        <input type="file" id="resume" name="resume" required accept=".pdf,.doc,.docx">
+                        <small class="file-info">Upload your resume (PDF, DOC, or DOCX)</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="domain">Domain <span class="required">*</span></label>
+                        <select id="domain" name="domain" required>
+                            <option value="">Select your domain</option>
+                            <option value="Web Development">Web Development</option>
+                            <option value="Artificial Intelligence">Artificial Intelligence</option>
+                            <option value="Design">Design</option>
+                            <option value="Data Science">Data Science</option>
+                            <option value="Mobile Development">Mobile Development</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Internship Mode <span class="required">*</span></label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="mode" value="Online" required>
+                                <span>Online</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="mode" value="Offline" required>
+                                <span>Offline</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" onclick="closeModal()">Cancel</button>
+                        <button type="submit" class="btn-primary">Submit Application</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
